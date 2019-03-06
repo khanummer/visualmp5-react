@@ -2,9 +2,31 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import ApolloClient from 'apollo-boost';
+import  { ApolloProvider } from 'react-apollo';
+import { BrowserRouter } from 'react-router-dom'
+
+
+
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+const client = new ApolloClient({
+    uri: 'http://localhost:4000/graphql',
+    onError: ({networkError, graphqlErrors}) => {
+        console.log('graphql errors', graphqlErrors)
+        console.log('graphql errors', networkError)
+    }
+})
+
+
+ReactDOM.render(
+    <BrowserRouter>
+        <ApolloProvider client = {client}>
+            <App />
+        </ApolloProvider>
+    </BrowserRouter>,
+    document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
