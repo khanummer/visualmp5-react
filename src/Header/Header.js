@@ -8,7 +8,7 @@ class Header extends Component {
       <div className="Header">
         <div>PROFILE</div>
         <div>SEARCH</div>
-        <div>CREATE</div>
+        <Link to="/register"><div>CREATE</div></Link>
         <Link to="/"><div>HOME</div></Link>
         <div>SETTINGS</div>
       </div>
