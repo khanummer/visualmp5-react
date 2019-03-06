@@ -1,0 +1,21 @@
+.Header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: black;
+    /* font-size: 3rem; */
+    color: turquoise;
+}
+
+.Header a:hover {
+    color: pink;
+}
+
+a {
+text-decoration: none;
+}
+
+a:visited {
+    color: turquoise;
+}
