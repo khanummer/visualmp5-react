@@ -1,0 +1,22 @@
+.Footer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    padding: 1rem;
+    background-color: black;
+    /* font-size: 3rem; */
+    color: turquoise;
+    
+}
+
+.Footer a:hover {
+    color: pink;
+}
+
+a {
+text-decoration: none;
+}
+
+a:visited {
+    color: turquoise;
+}
