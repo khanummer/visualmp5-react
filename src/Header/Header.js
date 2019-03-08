@@ -7,7 +7,7 @@ class Header extends Component {
     if (this.props.loggedIn == true) {
       return (
         <div className="Header">
-          <Link to='`/users/{this.props.loggedUser._id}`'><div>PROFILE</div></Link>
+          <Link to={`/users/${this.props.loggedUser._id}`}><div>PROFILE</div></Link>
           <div>SEARCH</div>
           <div>CREATE</div>
           <Link to="/"><div>HOME</div></Link>

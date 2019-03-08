@@ -134,7 +134,7 @@ handleLogout = async () => {
         <Route exact path="/" component={() => <Home/>}/>
         <Route exact path="/contact" component={() => <Contact/>}/>
         <Route exact path="/login-or-register" component={(...props) => <LoginRegister doLoginUser={this.doLoginUser} handleRegister={this.handleRegister}/>}/>
-        <Route exact path="/user/:id" component={() => <UserShow/>}/>
+        <Route exact path="/users/:id" component={(...props) => <UserShow {...props} loggedUser={this.state.loggedUser}/>}/>
       </Switch>
       <Footer loggedIn={this.state.loggedIn} loggedUser={this.state.loggedUser}/>
       </div>
