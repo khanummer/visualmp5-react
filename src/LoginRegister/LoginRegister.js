@@ -13,9 +13,7 @@ class LoginRegister extends Component {
     },
     login: {
         username: '',
-        password: '',
-        email: '',
-        profilePic: ''        
+        password: ''
     }
   }
 
@@ -68,8 +66,6 @@ class LoginRegister extends Component {
             <form onSubmit={this.handleLoginSave}>
                 <input value={this.state.login.username} placeholder="username" name='username' onChange={this.handleLoginInput}/>
                 <input value={this.state.login.password} placeholder="password" name='password' onChange={this.handleLoginInput}/>
-                <input value={this.state.login.email} placeholder="email" name='email' onChange={this.handleLoginInput}/>
-                <input value={this.state.login.profilePic} placeholder="profile picture" name='profilePic' onChange={this.handleLoginInput}/>
                 <button type="submit">Login</button>
             </form>
 

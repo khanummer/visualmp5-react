@@ -38,6 +38,8 @@ class UserShow extends Component {
             return err
         }
     }
+    // do a turnary for if user is logged in and if logged user.id(pass from app.js) = this user.id then show delete button if not dont show delete button
+    // nvm add delete button and edit button on settings page
   render() {
     return (
       <div className="UserShow">
@@ -45,6 +47,8 @@ class UserShow extends Component {
             <img src={`${this.state.user.profilePic}`}/>
             <div>{this.state.user.username}</div>
             <div>{this.state.user.email}</div>
+            <button onClick={() => this.props.deleteUser(this.props.match.params.id)}>Delete Your Profile</button>
+
             
       </div>
     );

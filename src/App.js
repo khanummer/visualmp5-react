@@ -123,9 +123,35 @@ handleLogout = async () => {
     } catch (err) {
       console.log(err)
         return err
-
     }
   }
+
+  deleteUser = async (id) => {
+    try {
+      const deletedUser = await fetch(`http://localhost:4000/users/${id}`, {
+        method: 'DELETE',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': 'http://localhost:3000'
+        }
+      });
+      if (!deletedUser.ok) {
+        throw Error(deletedUser.statusText);
+      }
+      const parsedDeletedUser = await deletedUser.json();
+      this.setState({
+        logged: false,
+        username: '',
+        user: {}
+      });
+
+      this.props.history.push('/');
+    } catch (err) {
+      return err
+    }
+  }
+
   render() {
     return (
       <div className="App">
@@ -134,7 +160,7 @@ handleLogout = async () => {
         <Route exact path="/" component={() => <Home/>}/>
         <Route exact path="/contact" component={() => <Contact/>}/>
         <Route exact path="/login-or-register" component={(...props) => <LoginRegister doLoginUser={this.doLoginUser} handleRegister={this.handleRegister}/>}/>
-        <Route exact path="/users/:id" component={(...props) => <UserShow {...props} loggedUser={this.state.loggedUser}/>}/>
+        <Route exact path="/users/:id" component={(...props) => <UserShow {...props} loggedUser={this.state.loggedUser} deleteUser={this.deleteUser}/>}/>
       </Switch>
       <Footer loggedIn={this.state.loggedIn} loggedUser={this.state.loggedUser}/>
       </div>
