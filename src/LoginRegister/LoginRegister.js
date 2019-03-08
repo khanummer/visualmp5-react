@@ -18,12 +18,39 @@ class LoginRegister extends Component {
         profilePic: ''        
     }
   }
-  handleRegisterSave = (e) => {
+  handleRegisterSave = async (e) => {
 
     e.preventDefault();
 
     const { username, email, password, profilePic } = this.state.register;
     console.log(username, email, password, profilePic, 'registered')
+    
+      try{
+          const registerResponse =  await fetch ('http://localhost:4000/users', {
+              method: 'POST',
+              credentials: 'include',
+              body: JSON.stringify(this.state.register),
+              headers: {
+                  'Content-Type': 'application/json',
+                  'Access-Control-Allow-Origin': 'http://localhost:3000'
+
+              }
+          });
+
+          if(!registerResponse.ok) {
+              throw Error(registerResponse.statusText)
+          }
+
+          const parsedResponse = await registerResponse.json();
+
+          if (parsedResponse.data === 'login successful'){
+              console.log(parsedResponse.user)
+          }
+
+      } catch (err) {
+          console.log(err);
+      }
+  
 
   }
     handleRegisterInput = (e) => {

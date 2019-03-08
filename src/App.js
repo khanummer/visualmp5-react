@@ -7,6 +7,15 @@ import Contact from './Contact/Contact';
 import LoginRegister from './LoginRegister/LoginRegister';
 
 class App extends Component {
+
+  state = {
+    users: []
+  }
+
+  componentDidMount(){
+    this.getUsers()
+  }
+
   searchSpotify = async () => {
     try {
         const response = await fetch(`/spotify/search`);
@@ -20,6 +29,34 @@ class App extends Component {
         return err
     }
 }
+  getUsers = async () => {
+    try {
+        const response = await fetch(`http://localhost:4000/users`, {
+          method: 'GET',
+          // credentials: 'include',
+          headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': 'http://localhost:3000'
+          }
+        });
+          
+          if (!response.ok) {
+            throw Error(response.statusText)
+          }
+          console.log(response)
+          const userParsed = await response.json();
+          console.log(userParsed)
+          // this.setState({
+          //   user: userParsed.data
+          // });
+          // console.log(this.state, 'this is state')
+
+    } catch (err) {
+      console.log(err)
+        return err
+
+    }
+  }
   render() {
     return (
       <div className="App">
@@ -29,7 +66,6 @@ class App extends Component {
         <Route exact path="/contact" component={() => <Contact/>}/>
         <Route exact path="/register" component={() => <LoginRegister/>}/>
       </Switch>
-        HELLO I AM VISUAL.MP5 
       <Footer/>
       </div>
     );
