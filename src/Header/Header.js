@@ -4,15 +4,26 @@ import { Link } from 'react-router-dom';
 
 class Header extends Component {
   render() {
-    return (
+    if (this.props.loggedIn == true) {
+      return (
+        <div className="Header">
+          <Link to='`/users/{this.props.loggedUser._id}`'><div>PROFILE</div></Link>
+          <div>SEARCH</div>
+          <div>CREATE</div>
+          <Link to="/"><div>HOME</div></Link>
+          <Link to="/" onClick={() => this.props.handleLogout}><div>LOGOUT</div></Link>
+        </div>
+      );
+
+    } else { 
+      return (
       <div className="Header">
-        <div>PROFILE</div>
-        <div>SEARCH</div>
-        <Link to="/register"><div>CREATE</div></Link>
         <Link to="/"><div>HOME</div></Link>
-        <div>SETTINGS</div>
+        <div>SEARCH</div>
+        <Link to="/login-or-register"><div>LOGIN / REGISTER</div></Link>
       </div>
-    );
+      )
+    }
   }
 }
 

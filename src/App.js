@@ -1,20 +1,89 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Switch, Route, withRouter } from 'react-router-dom'
+import axios from 'axios';
 import Header from './Header/Header';
 import Footer from './Footer/Footer'
+import Home from './Home/Home';
 import Contact from './Contact/Contact';
 import LoginRegister from './LoginRegister/LoginRegister';
+import UserShow from './UserShow/UserShow';
 
 class App extends Component {
 
   state = {
-    users: []
+    users: [],
+    loggedUser: {},
+    loggedIn: false,
+    username: ''
   }
 
   componentDidMount(){
     this.getUsers()
   }
+
+  doLoginUser = (user) =>
+    axios.post('http://localhost:4000/users/login', user)
+      .then(res => {
+        console.log(res)
+        this.setState({
+          loggedUser: res.data.loggedUser
+        })
+        // console.log(this.state)
+        res.data.isLoggedIn ? this.setState({loggedIn: true}) : this.setState({loggedIn: false})
+      })
+// res.data.isLoggedIn ? this.props.history.push('/home') : this.props.history.push('/')
+
+handleRegister = async (data) => {
+    try{
+        const registerResponse =  await fetch ('http://localhost:4000/users', {
+            method: 'POST',
+            credentials: 'include',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': 'http://localhost:3000'
+
+            }
+        });
+
+        if(!registerResponse.ok) {
+            throw Error(registerResponse.statusText)
+        }
+
+        const parsedResponse = await registerResponse.json();
+
+        if (parsedResponse.data === 'login successful'){
+          this.setState({
+            loggedIn: true,
+            loggedUser: parsedResponse.user
+          })
+          console.log(parsedResponse.user,'user registered')
+        }
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+handleLogout = async () => {
+  // try {
+  //   const response = await fetch('/users/logout');
+
+  //   if (!response.ok) {
+  //     throw Error(response.statusText)
+  //   } else {
+  //     console.log(response);
+  //   }
+  //   const deletedSession = await response.json();
+    this.setState({
+      user: {},
+      loggedIn: false
+    })
+//     this.props.history.push('/')
+//   } catch (err) {
+//     console.log(err);
+// }
+}
 
   searchSpotify = async () => {
     try {
@@ -60,13 +129,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <Header/>
+      <Header loggedIn={this.state.loggedIn} loggedUser={this.state.loggedUser} handleLogout={this.handleLogout}/>
       <Switch>
-        <Route exact path="/" component={() => <LoginRegister/>}/>
+        <Route exact path="/" component={() => <Home/>}/>
         <Route exact path="/contact" component={() => <Contact/>}/>
-        <Route exact path="/register" component={() => <LoginRegister/>}/>
+        <Route exact path="/login-or-register" component={(...props) => <LoginRegister doLoginUser={this.doLoginUser} handleRegister={this.handleRegister}/>}/>
+        <Route exact path="/user/:id" component={() => <UserShow/>}/>
       </Switch>
-      <Footer/>
+      <Footer loggedIn={this.state.loggedIn} loggedUser={this.state.loggedUser}/>
       </div>
     );
   }

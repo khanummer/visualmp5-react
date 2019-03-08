@@ -19,3 +19,10 @@ text-decoration: none;
 a:visited {
     color: turquoise;
 }
+Link {
+    text-decoration: none
+}
+
+Link:visited {
+    color: turquoise
+}

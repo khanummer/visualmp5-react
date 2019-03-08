@@ -4,11 +4,20 @@ import { Link } from 'react-router-dom';
 
 class Footer extends Component {
   render() {
-    return (
+      if (this.props.loggedIn == true) {
+        return (
       <div className="Footer">
         <Link to="/contact"><div>CONTACT</div></Link>
+        <div>SETTINGS</div>
       </div>
-    );
+        )
+      } else {
+        return (
+            <div className="Footer">
+            <Link to="/contact"><div>CONTACT</div></Link>
+          </div>
+        )
+      }
   }
 }
 

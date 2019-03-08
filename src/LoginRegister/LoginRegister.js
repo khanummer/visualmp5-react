@@ -7,52 +7,29 @@ class LoginRegister extends Component {
   state = {
     register: {
         username: '',
-        email: '',
         password: '',
+        email: '',
         profilePic: ''
     },
     login: {
         username: '',
-        email: '',
         password: '',
+        email: '',
         profilePic: ''        
     }
   }
-  handleRegisterSave = async (e) => {
 
-    e.preventDefault();
-
-    const { username, email, password, profilePic } = this.state.register;
-    console.log(username, email, password, profilePic, 'registered')
-    
-      try{
-          const registerResponse =  await fetch ('http://localhost:4000/users', {
-              method: 'POST',
-              credentials: 'include',
-              body: JSON.stringify(this.state.register),
-              headers: {
-                  'Content-Type': 'application/json',
-                  'Access-Control-Allow-Origin': 'http://localhost:3000'
-
-              }
-          });
-
-          if(!registerResponse.ok) {
-              throw Error(registerResponse.statusText)
-          }
-
-          const parsedResponse = await registerResponse.json();
-
-          if (parsedResponse.data === 'login successful'){
-              console.log(parsedResponse.user)
-          }
-
-      } catch (err) {
-          console.log(err);
-      }
   
-
+  handleRegisterSave = (e) => {
+    e.preventDefault();
+    this.props.handleRegister(this.state.register);
   }
+
+  handleLoginSave = (e) => {
+    e.preventDefault();
+    this.props.doLoginUser(this.state.login);
+  }
+
     handleRegisterInput = (e) => {
         this.setState({
             register: {
@@ -60,11 +37,22 @@ class LoginRegister extends Component {
             [e.currentTarget.name] : e.currentTarget.value
             }
         });
-        console.log(this.state)
+        // console.log(this.state.register)
     }
 
+    handleLoginInput = (e) => {
+      this.setState({
+          login: {
+              ...this.state.login,
+          [e.currentTarget.name] : e.currentTarget.value
+          }
+      });
+      // console.log(this.state.login)
+  }
+  
 
   render(){
+    // console.log(this.props)
     return (
         <div>
             <div>Register</div>
@@ -77,12 +65,12 @@ class LoginRegister extends Component {
             </form>
 
             <div>Login</div>
-            <form onSubmit={this.handleRegisterSave}>
-                <input value={this.state.register.username} placeholder="username" name='username' onChange={this.handleRegisterInput}/>
-                <input value={this.state.register.password} placeholder="password" name='password' onChange={this.handleRegisterInput}/>
-                <input value={this.state.register.email} placeholder="email" name='email' onChange={this.handleRegisterInput}/>
-                <input value={this.state.register.profilePic} placeholder="profile picture" name='profilePic' onChange={this.handleRegisterInput}/>
-                <button type="submit">Register</button>
+            <form onSubmit={this.handleLoginSave}>
+                <input value={this.state.login.username} placeholder="username" name='username' onChange={this.handleLoginInput}/>
+                <input value={this.state.login.password} placeholder="password" name='password' onChange={this.handleLoginInput}/>
+                <input value={this.state.login.email} placeholder="email" name='email' onChange={this.handleLoginInput}/>
+                <input value={this.state.login.profilePic} placeholder="profile picture" name='profilePic' onChange={this.handleLoginInput}/>
+                <button type="submit">Login</button>
             </form>
 
         </div>
