@@ -8,7 +8,7 @@ class Footer extends Component {
         return (
       <div className="Footer">
         <Link to="/contact"><div>CONTACT</div></Link>
-        <div>SETTINGS</div>
+        <Link to="/settings"><div>SETTINGS</div></Link>
       </div>
         )
       } else {

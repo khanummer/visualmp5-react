@@ -6,6 +6,7 @@ import Header from './Header/Header';
 import Footer from './Footer/Footer'
 import Home from './Home/Home';
 import Contact from './Contact/Contact';
+import Settings from './Settings/Settings'
 import LoginRegister from './LoginRegister/LoginRegister';
 import UserShow from './UserShow/UserShow';
 
@@ -112,9 +113,8 @@ handleLogout = async () => {
           if (!response.ok) {
             throw Error(response.statusText)
           }
-          console.log(response)
           const userParsed = await response.json();
-          console.log(userParsed)
+          console.log(userParsed.data, 'ALL USERS')
           // this.setState({
           //   user: userParsed.data
           // });
@@ -151,6 +151,11 @@ handleLogout = async () => {
       return err
     }
   }
+  updateParentState = (updatedUser) => {
+    this.setState({
+      user: updatedUser
+    });
+  }
 
   render() {
     return (
@@ -161,6 +166,7 @@ handleLogout = async () => {
         <Route exact path="/contact" component={() => <Contact/>}/>
         <Route exact path="/login-or-register" component={(...props) => <LoginRegister doLoginUser={this.doLoginUser} handleRegister={this.handleRegister}/>}/>
         <Route exact path="/users/:id" component={(...props) => <UserShow {...props} loggedUser={this.state.loggedUser} deleteUser={this.deleteUser}/>}/>
+        <Route exact path="/settings" component={(...props) => <Settings {...props} loggedUser={this.state.loggedUser} deleteUser={this.deleteUser} updateParentState={this.updateParentState}/>}/>
       </Switch>
       <Footer loggedIn={this.state.loggedIn} loggedUser={this.state.loggedUser}/>
       </div>
