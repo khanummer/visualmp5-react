@@ -47,9 +47,6 @@ class UserShow extends Component {
             <img src={`${this.state.user.profilePic}`}/>
             <div>{this.state.user.username}</div>
             <div>{this.state.user.email}</div>
-            <button onClick={() => this.props.deleteUser(this.props.match.params.id)}>Delete Your Profile</button>
-
-            
       </div>
     );
   }

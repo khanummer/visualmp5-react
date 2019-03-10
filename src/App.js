@@ -9,6 +9,7 @@ import Contact from './Contact/Contact';
 import Settings from './Settings/Settings'
 import LoginRegister from './LoginRegister/LoginRegister';
 import UserShow from './UserShow/UserShow';
+import MashupCreate from './MashupCreate/MashupCreate';
 
 class App extends Component {
 
@@ -67,23 +68,30 @@ handleRegister = async (data) => {
 }
 
 handleLogout = async () => {
-  // try {
-  //   const response = await fetch('/users/logout');
+  try {
+    const response = await fetch('http://localhost:4000/users/logout', {
+      method: 'GET',
+      headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': 'http://localhost:3000'
 
-  //   if (!response.ok) {
-  //     throw Error(response.statusText)
-  //   } else {
-  //     console.log(response);
-  //   }
-  //   const deletedSession = await response.json();
+      }
+    });
+
+    if (!response.ok) {
+      throw Error(response.statusText)
+    } else {
+      console.log(response);
+    }
+    const deletedSession = await response.json();
     this.setState({
-      user: {},
+      user: deletedSession.user || {},
       loggedIn: false
     })
-//     this.props.history.push('/')
-//   } catch (err) {
-//     console.log(err);
-// }
+    this.props.history.push('/')
+  } catch (err) {
+    console.log(err);
+}
 }
 
   searchSpotify = async () => {
@@ -166,6 +174,7 @@ handleLogout = async () => {
         <Route exact path="/contact" component={() => <Contact/>}/>
         <Route exact path="/login-or-register" component={(...props) => <LoginRegister doLoginUser={this.doLoginUser} handleRegister={this.handleRegister}/>}/>
         <Route exact path="/users/:id" component={(...props) => <UserShow {...props} loggedUser={this.state.loggedUser} deleteUser={this.deleteUser}/>}/>
+        <Route exact path="/create-mashup" component={(...props) => <MashupCreate {...props} loggedUser={this.state.loggedUser}/>}/>
         <Route exact path="/settings" component={(...props) => <Settings {...props} loggedUser={this.state.loggedUser} deleteUser={this.deleteUser} updateParentState={this.updateParentState}/>}/>
       </Switch>
       <Footer loggedIn={this.state.loggedIn} loggedUser={this.state.loggedUser}/>

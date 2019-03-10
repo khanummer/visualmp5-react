@@ -1,0 +1,40 @@
+.LoginRegister {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 40rem 40rem; 
+    grid-template-rows: 40rem;
+    grid-template-areas: "login register"
+
+}
+
+.Login {
+    grid-area: login
+}
+
+.Register {
+    grid-area: register
+}
+
+.Register-Header {
+    font-size: 3.5rem;
+}
+
+.Login-Header {
+    font-size: 3.5rem;
+}
+
+.Register-Input {
+    /* background-color: black; */
+}
+
+.Login-Input {
+    /* background-color: black; */
+}
+
+/* .Register-Form {
+}
+
+.Login-Form {
+
+} */

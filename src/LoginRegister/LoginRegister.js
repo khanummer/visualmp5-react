@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-
+import './LoginRegister.css';
 
 
 class LoginRegister extends Component {
@@ -52,22 +52,26 @@ class LoginRegister extends Component {
   render(){
     // console.log(this.props)
     return (
-        <div>
-            <div>Register</div>
-            <form onSubmit={this.handleRegisterSave}>
-                <input value={this.state.register.username} placeholder="username" name='username' onChange={this.handleRegisterInput}/>
-                <input value={this.state.register.password} placeholder="password" name='password' onChange={this.handleRegisterInput}/>
-                <input value={this.state.register.email} placeholder="email" name='email' onChange={this.handleRegisterInput}/>
-                <input value={this.state.register.profilePic} placeholder="profile picture" name='profilePic' onChange={this.handleRegisterInput}/>
-                <button type="submit">Register</button>
-            </form>
+        <div className="LoginRegister">
+          <div className="Register">
+              <div className="Register-Header" >Register</div><br></br>
+              <form className="Register-Form"onSubmit={this.handleRegisterSave}>
+                  <input className="Register-Input" value={this.state.register.username} placeholder="username" name='username' onChange={this.handleRegisterInput}/><br></br>
+                  <input className="Register-Input" value={this.state.register.password} placeholder="password" name='password' onChange={this.handleRegisterInput}/><br></br>
+                  <input className="Register-Input" value={this.state.register.email} placeholder="email" name='email' onChange={this.handleRegisterInput}/><br></br>
+                  <input className="Register-Input" value={this.state.register.profilePic} placeholder="profile picture" name='profilePic' onChange={this.handleRegisterInput}/><br></br>
+                  <button type="submit">Register</button>
+              </form>
+          </div>
 
-            <div>Login</div>
-            <form onSubmit={this.handleLoginSave}>
-                <input value={this.state.login.username} placeholder="username" name='username' onChange={this.handleLoginInput}/>
-                <input value={this.state.login.password} placeholder="password" name='password' onChange={this.handleLoginInput}/>
+          <div className="Login">
+            <div className="Login-Header">Login</div><br></br>
+            <form className="Login-Form" onSubmit={this.handleLoginSave}>
+                <input className="Login-Input" value={this.state.login.username} placeholder="username" name='username' onChange={this.handleLoginInput}/><br></br>
+                <input className="Login-Input" value={this.state.login.password} placeholder="password" name='password' onChange={this.handleLoginInput}/><br></br>
                 <button type="submit">Login</button>
             </form>
+          </div>
 
         </div>
       )
