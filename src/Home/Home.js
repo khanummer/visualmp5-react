@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Home.css';
+import { Link } from "react-router-dom";
 
 class Home extends Component {
 
@@ -41,7 +42,7 @@ class Home extends Component {
       <div className="Home">
         <div>HOME PAGE / MASHUPS SHOW PAGE</div>
           <ul>
-              { this.state.mashups.map((mashup, i) => <li key={i}>{mashup.userId} {mashup.spotifySong} {mashup.Image} {mashup.Video} {mashup.GIF} {mashup.Votes}</li>) }
+              { this.state.mashups.map((mashup, i) => <Link to={`/mashups/${mashup._id}`}><li key={i}>{mashup.userId} {mashup.spotifySong} {mashup.Image} {mashup.Video} {mashup.GIF} {mashup.Votes}</li></Link>) }
           </ul>
       </div>
     );

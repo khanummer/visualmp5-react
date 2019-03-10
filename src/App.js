@@ -10,6 +10,7 @@ import Settings from './Settings/Settings'
 import LoginRegister from './LoginRegister/LoginRegister';
 import UserShow from './UserShow/UserShow';
 import MashupCreate from './MashupCreate/MashupCreate';
+import MashupShow from './MashupShow/MashupShow';
 
 class App extends Component {
 
@@ -170,10 +171,11 @@ handleLogout = async () => {
       <div className="App">
       <Header loggedIn={this.state.loggedIn} loggedUser={this.state.loggedUser} handleLogout={this.handleLogout}/>
       <Switch>
-        <Route exact path="/" component={() => <Home/>}/>
-        <Route exact path="/contact" component={() => <Contact/>}/>
+        <Route exact path="/" component={(...props) => <Home {...props}/>}/>
+        <Route exact path="/contact" component={(...props) => <Contact {...props} />}/>
         <Route exact path="/login-or-register" component={(...props) => <LoginRegister doLoginUser={this.doLoginUser} handleRegister={this.handleRegister}/>}/>
         <Route exact path="/users/:id" component={(...props) => <UserShow {...props} loggedUser={this.state.loggedUser} deleteUser={this.deleteUser}/>}/>
+        <Route exact path="/mashups/:id" component={(...props) => <MashupShow {...props}/>}/>
         <Route exact path="/create-mashup" component={(...props) => <MashupCreate {...props} loggedUser={this.state.loggedUser}/>}/>
         <Route exact path="/settings" component={(...props) => <Settings {...props} loggedUser={this.state.loggedUser} deleteUser={this.deleteUser} updateParentState={this.updateParentState}/>}/>
       </Switch>
