@@ -11,6 +11,7 @@ import LoginRegister from './LoginRegister/LoginRegister';
 import UserShow from './UserShow/UserShow';
 import MashupCreate from './MashupCreate/MashupCreate';
 import MashupShow from './MashupShow/MashupShow';
+import Search from './Search/Search';
 
 class App extends Component {
 
@@ -20,7 +21,7 @@ class App extends Component {
     loggedIn: false,
     username: ''
   }
-
+  
   componentDidMount(){
     this.getUsers()
   }
@@ -95,19 +96,6 @@ handleLogout = async () => {
 }
 }
 
-  searchSpotify = async () => {
-    try {
-        const response = await fetch(`/spotify/search`);
-        if(!response.ok){
-            throw Error(response.statusText)
-        }
-        const parsedResponse = await response.json();
-        console.log(parsedResponse,  'this is spotify search')
-    } catch(err) {
-        console.log(err);
-        return err
-    }
-}
   getUsers = async () => {
     try {
         const response = await fetch(`http://localhost:4000/users`, {
@@ -171,13 +159,14 @@ handleLogout = async () => {
       <div className="App">
       <Header loggedIn={this.state.loggedIn} loggedUser={this.state.loggedUser} handleLogout={this.handleLogout}/>
       <Switch>
-        <Route exact path="/" component={(...props) => <Home {...props}/>}/>
+        <Route exact path="/" component={(...props) => <Home {...props} />}/>
         <Route exact path="/contact" component={(...props) => <Contact {...props} />}/>
         <Route exact path="/login-or-register" component={(...props) => <LoginRegister doLoginUser={this.doLoginUser} handleRegister={this.handleRegister}/>}/>
         <Route exact path="/users/:id" component={(...props) => <UserShow {...props} loggedUser={this.state.loggedUser} deleteUser={this.deleteUser}/>}/>
         <Route exact path="/mashups/:id" component={(...props) => <MashupShow {...props}/>}/>
         <Route exact path="/create-mashup" component={(...props) => <MashupCreate {...props} loggedUser={this.state.loggedUser}/>}/>
         <Route exact path="/settings" component={(...props) => <Settings {...props} loggedUser={this.state.loggedUser} deleteUser={this.deleteUser} updateParentState={this.updateParentState}/>}/>
+        <Route exact path="/search" component={(...props) => <Search {...props} />}/>
       </Switch>
       <Footer loggedIn={this.state.loggedIn} loggedUser={this.state.loggedUser}/>
       </div>

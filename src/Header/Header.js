@@ -9,18 +9,18 @@ class Header extends Component {
       return (
         <div className="Header">
           <Link to={`/users/${this.props.loggedUser._id}`}><div>PROFILE</div></Link>
-          <div>SEARCH</div>
+          <Link to="/search"><div>SEARCH</div></Link>
           <Link to="/create-mashup"><div>CREATE</div></Link>
           <Link to="/"><div>HOME</div></Link>
           <Link to="/" onClick={() => this.props.handleLogout}><div>LOGOUT</div></Link>
         </div>
       );
-
+      
     } else { 
       return (
-      <div className="Header">
+        <div className="Header">
         <Link to="/"><div>HOME</div></Link>
-        <div>SEARCH</div>
+        <Link to="/search"><div>SEARCH</div></Link>
         <Link to="/login-or-register"><div>LOGIN / REGISTER</div></Link>
       </div>
       )
