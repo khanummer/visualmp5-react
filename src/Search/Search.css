@@ -1,0 +1,77 @@
+.Search {
+    background-color: #FBFCF2;
+    color: #877476;
+    height: 160vh;
+    font-size: 1.4rem;
+}
+
+.Search-title {
+    font-size: 3rem;
+    color: #877476;
+    padding: 3rem;
+}
+
+
+.Search-Form {
+    color: #877476;
+
+    /* font-size: 2rem; */
+}
+
+
+
+.Search-Input {
+    background-color: #A7A2A2;
+    color: #FBFCF2;
+    border: none;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    margin: 1rem;
+    padding: 0.3rem;
+
+
+}
+
+
+
+.Search-Button {
+    background-color: #A7A2A2;
+    color: #FBFCF2;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    padding: 7px 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 1rem;
+}
+
+.Search-Button:hover {
+    background-color: #A7A2A2;
+    color: #CED3CD;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    padding: 7px 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 1rem;
+}
+
+
+
+
+
+
+
+.Search a {
+    color: #877476;
+}
+
+.Search a:visited {
+    color: #877476
+}
+
+.Search a:hover {
+    color: #CED3CD
+}

@@ -42,25 +42,31 @@ class Search extends Component {
             }
             const parsedResponse = await response.json();
             console.log(parsedResponse.results.trackmatches.track,  'this is lastFM search')
+            this.setState({
+                songs: parsedResponse.results.trackmatches.track
+            })
         } catch(err) {
             console.log(err);
             return err
         }
 }
-// postSongs = () => this.state.songs.map((song, i) => <li key={i}> {song.image[0]} {song.name} {song.artist} {song.url} </li>)
+//figure out hashtag 
+// <div key={i}><img src={`${song.image[0].#text}`}/></div>
+
+// <a href="#"><button>CREATE VISUALMP5</button></a>
 
   render() {
     return (
       <div className="Search">
-        <div>SEARCH PAGE </div>
-            <form onSubmit={this.getSongs}>
-              <input type="text" onChange={this.handleSearchInput} value={this.state.search}/>
-              <br></br><button type="submit">Submit</button>
+        <div className="Search-title">SEARCH FOR A SONG</div>
+            <form className="Search-Form" onSubmit={this.getSongs}>
+              <input className="Search-Input"type="text" onChange={this.handleSearchInput} value={this.state.search}/>
+              <br></br><button className="Search-Button" type="submit">Submit</button>
 
             </form>
-    <ul>
-    { this.state.songs.map((song, i) => <li key={i}> {song.image[0]} {song.name} {song.artist} {song.url} </li>)}
-    </ul>
+    <div>
+    { this.state.songs.map((song, i) => <div> <a href={`${song.url}`}><div key={i}>{song.name} - {song.artist}</div></a>  </div>)}
+    </div>
       </div>
     );
   }
