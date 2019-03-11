@@ -1,0 +1,62 @@
+.MashupCreate {
+    /* font-size: 5rem; */
+    background-color: #A7A2A2;
+    padding: 2rem;
+}
+
+
+.MashupCreate-Header {
+    font-size: 4rem;
+    color: #877476;
+    padding: 1.5rem;
+}
+
+
+
+
+
+
+.MashupCreate-Form, .MashupCreate-Form {
+    color: #877476;
+    font-size: 1.5rem;
+
+    /* font-size: 1rem; */
+}
+
+
+
+.MashupCreate-Input, .MashupCreate-Input {
+    background-color: #E5E6E4;
+    color: #877476;
+    border: none;
+    font-size: 1.8rem;
+    border-radius: 10px;
+    margin: 1rem;
+
+}
+
+
+
+.MashupCreate-Button {
+    background-color: #E5E6E4;
+    color: #877476;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    padding: 7px 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 1rem;
+}
+
+.MashupCreate-Button:hover {
+    background-color: #CED3CD;
+    color: #877476;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    padding: 7px 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 1rem;
+}

@@ -3,13 +3,13 @@
     flex-flow: row nowrap;
     justify-content: space-between;
     padding: 1rem;
-    background-color: black;
+    background-color: #877476;
     /* font-size: 3rem; */
-    color: turquoise;
+    color: #FBFCF2;
 }
 
 .Header a:hover {
-    color: pink;
+    color: #CED3CD;
 }
 
 a {
@@ -17,12 +17,12 @@ text-decoration: none;
 }
 
 a:visited {
-    color: turquoise;
+    color: #FBFCF2;
 }
 Link {
     text-decoration: none
 }
 
 Link:visited {
-    color: turquoise
+    color: #FBFCF2;
 }

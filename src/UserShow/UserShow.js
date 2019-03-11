@@ -43,10 +43,9 @@ class UserShow extends Component {
   render() {
     return (
       <div className="UserShow">
-            <div>USER SHOW PAGE</div>
-            <img src={`${this.state.user.profilePic}`}/>
-            <div>{this.state.user.username}</div>
-            <div>{this.state.user.email}</div>
+            <img className="UserShow-profilePic" src={`${this.state.user.profilePic}`}/>
+            <div className="UserShow-username">{this.state.user.username}</div>
+            <div className="UserShow-email">{this.state.user.email}</div>
       </div>
     );
   }

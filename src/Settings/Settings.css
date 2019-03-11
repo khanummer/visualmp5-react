@@ -1,23 +1,163 @@
+/* 4 rows 2 columns */
+
 .Settings {
-    display: flex;
+    color: #E5E6E4;
+    background-color: #A7A2A2;
+    display: grid;
     flex-flow: row nowrap;
-    justify-content: space-between;
+    justify-content: center;
+    align-self: center;
+    /* justify-self: center; */
+    justify-items: center;
+    align-items: center;
     padding: 1rem;
-    background-color: black;
-    /* font-size: 3rem; */
-    color: turquoise;
+    grid-template-columns: 600px 600px;
+    grid-template-rows: 100px 
+                        100px
+                        100px 
+                        100px 
+                        300px;
+    grid-template-areas: "settings settings"
+                        "image username"
+                         "image email"
+                         "edit-title delete-title"
+                         "edit-form delete-button"
 }
 
-.Settings a:hover {
+.Settings-title {
+    grid-area: settings;
+    font-size: 5rem;
+}
+
+.Settings-edit-header, .Settings-delete-header {
+    font-size: 2rem;
+}
+
+.Settings-edit-form-input {
+    font-size: 0.5rem;
+    padding: 0.7rem;
+    margin: 0.9rem;
+}
+
+.Settings-edit-form-button {
+    font-size: 1rem;
+}
+.Settings-delete-button {
+    font-size: 1rem;
+}
+
+.Settings-img {
+    height: 10rem;
+    width: 10rem;
+}
+
+.Settings-username {
+    font-size: 3rem;
+    text-align: right;
+}
+
+.Settings-email {
+    font-size: 3rem;
+    text-align: right;
+}
+
+
+
+
+
+/* ----------------------------- */
+.Settings-img {
+    grid-area: image;
+}
+
+.Settings-username {
+    grid-area: username;
+}
+
+.Settings-email {
+    grid-area: email;
+}
+
+.Settings-edit-header {
+    grid-area: edit-title;
+}
+
+.Settings-edit-form {
+    grid-area: edit-form;
+}
+
+.Settings-delete-header {
+    grid-area: delete-title;
+}
+
+.Settings-delete-button {
+    grid-area: delete-button;
+}
+/* --------------------------- */
+
+.Settings-edit-form-input {
+    background-color: #CED3CD;
+    color: #877476;
+    border: none;
+    font-size: 1rem;
+    border-radius: 24px;
+}
+
+
+
+.Settings-delete-button, .Settings-edit-form-button {
+    background-color: #877476;
+    color: #FBFCF2;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    padding: 7px 30px;
+    font-size: .8em;
+    font-weight: 500;
+    margin: 1rem;
+}
+
+.Settings-delete-button:hover, .Settings-edit-form-button:hover {
+    background-color: #877476;
+    color: #CED3CD;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    padding: 7px 30px;
+    font-size: .8em;
+    font-weight: 500;
+    margin: 1rem;
+}
+
+
+.Settings-delete-button, .Settings-delete-button:hover {
+    font-size: 1.7rem;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .Settings a:hover {
     color: pink;
 }
+
 
 a {
 text-decoration: none;
 }
 
 a:visited {
-    color: turquoise;
+    color: rgb(219, 248, 245);
 }
 Link {
     text-decoration: none
@@ -25,4 +165,4 @@ Link {
 
 Link:visited {
     color: turquoise
-}
+} */

@@ -63,13 +63,13 @@ class MashupCreate extends Component {
     render(){
         return(
             <div className="MashupCreate" >
-                <div className="MashupCreate-Header">CREATE A NEW MASHUP</div><br></br>
+                <div className="MashupCreate-Header">CREATE A VISUALMP5</div><br></br>
                 <form className="MashupCreate-Form" onSubmit={this.handleSubmit}>
-                    <input className="MashupCreate-Input" value={this.state.mashup.spotifySong} placeholder="Spotify Song" name='spotifySong' onChange={this.handleInput}/><br></br>
-                    <input className="MashupCreate-Input" value={this.state.mashup.Image} placeholder="Image" name='Image' onChange={this.handleInput}/><br></br>
-                    <input className="MashupCreate-Input" value={this.state.mashup.Video} placeholder="Video" name='Video' onChange={this.handleInput}/><br></br>
-                    <input className="MashupCreate-Input" value={this.state.mashup.GIF} placeholder="GIF" name='GIF' onChange={this.handleInput}/><br></br>
-                    <button type="submit">SUBMIT</button>
+                    SPOTIFY SONG<br></br><input className="MashupCreate-Input" value={this.state.mashup.spotifySong} name='spotifySong' onChange={this.handleInput}/><br></br>
+                    IMAGE<br></br><input className="MashupCreate-Input" value={this.state.mashup.Image} name='Image' onChange={this.handleInput}/><br></br>
+                    VIDEO<br></br><input className="MashupCreate-Input" value={this.state.mashup.Video} name='Video' onChange={this.handleInput}/><br></br>
+                    GIF<br></br><input className="MashupCreate-Input" value={this.state.mashup.GIF} name='GIF' onChange={this.handleInput}/><br></br>
+                    <button className="MashupCreate-Button" type="submit">SUBMIT</button>
                 </form>
             </div>
         )

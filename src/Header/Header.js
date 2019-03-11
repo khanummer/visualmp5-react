@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
-// commit and push
-// make mashup show 
-// make searchbar for spotify api on home page (mayeb new component)
-// mashup delete
+
 
 class Header extends Component {
   render() {

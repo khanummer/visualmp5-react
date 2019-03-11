@@ -56,20 +56,20 @@ class LoginRegister extends Component {
           <div className="Register">
               <div className="Register-Header" >Register</div><br></br>
               <form className="Register-Form"onSubmit={this.handleRegisterSave}>
-                  <input className="Register-Input" value={this.state.register.username} placeholder="username" name='username' onChange={this.handleRegisterInput}/><br></br>
-                  <input className="Register-Input" value={this.state.register.password} placeholder="password" name='password' onChange={this.handleRegisterInput}/><br></br>
-                  <input className="Register-Input" value={this.state.register.email} placeholder="email" name='email' onChange={this.handleRegisterInput}/><br></br>
-                  <input className="Register-Input" value={this.state.register.profilePic} placeholder="profile picture" name='profilePic' onChange={this.handleRegisterInput}/><br></br>
-                  <button type="submit">Register</button>
+                  USERNAME<br></br><input className="Register-Input" value={this.state.register.username} name='username' onChange={this.handleRegisterInput}/><br></br>
+                  PASSWORD<br></br><input className="Register-Input" value={this.state.register.password} name='password' onChange={this.handleRegisterInput}/><br></br>
+                  E-MAIL<br></br><input className="Register-Input" value={this.state.register.email}  name='email' onChange={this.handleRegisterInput}/><br></br>
+                  PROFILE PIC URL<br></br><input className="Register-Input" value={this.state.register.profilePic} name='profilePic' onChange={this.handleRegisterInput}/><br></br>
+                  <button className="Login-Register-Button" type="submit">Register</button>
               </form>
           </div>
 
           <div className="Login">
             <div className="Login-Header">Login</div><br></br>
             <form className="Login-Form" onSubmit={this.handleLoginSave}>
-                <input className="Login-Input" value={this.state.login.username} placeholder="username" name='username' onChange={this.handleLoginInput}/><br></br>
-                <input className="Login-Input" value={this.state.login.password} placeholder="password" name='password' onChange={this.handleLoginInput}/><br></br>
-                <button type="submit">Login</button>
+                USERNAME<br></br><input className="Login-Input" value={this.state.login.username} name='username' onChange={this.handleLoginInput}/><br></br>
+                PASSWORD<br></br><input className="Login-Input" value={this.state.login.password} name='password' onChange={this.handleLoginInput}/><br></br>
+                <button className="Login-Register-Button" type="submit">Login</button>
             </form>
           </div>
 
