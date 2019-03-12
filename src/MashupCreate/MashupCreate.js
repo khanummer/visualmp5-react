@@ -177,7 +177,7 @@ class MashupCreate extends Component {
 
                 <div>
 
-                    <div className="Gif-Search-title">SEARCH FOR A GIF</div>
+                    <div className="Gif-Search-title" id="GIF">SEARCH FOR A GIF</div>
                     <form className="Gif-Search-Form" onSubmit={this.getGIFS}>
                         <input className="Gif-Search-Input"type="text" onChange={this.handleSearchInput} value={this.state.search}/>
                         <br></br><button className="MashupCreate-Button" type="submit">SUBMIT</button>
@@ -186,7 +186,7 @@ class MashupCreate extends Component {
 
 
                 <div>
-                    { this.state.gifResults.map((gif, i) => <div> <iframe src={`${gif.embed_url}`} width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> <br></br><button className="song-show-button">SELECT</button></div> )}
+                    { this.state.gifResults.map((gif, i) => <div> <iframe src={`${gif.embed_url}`} width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> <br></br><button className="song-show-button" onClick={() => this.setState({ mashup: {...this.state.mashup, GIF:`${gif.embed_url}`} })}>SELECT</button></div> )}
                 </div>
 
                     <div className="coming-soon">----COMING SOON----</div>

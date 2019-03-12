@@ -21,11 +21,14 @@ class LoginRegister extends Component {
   handleRegisterSave = (e) => {
     e.preventDefault();
     this.props.handleRegister(this.state.register);
+    this.props.history.push('/')
+
   }
 
   handleLoginSave = (e) => {
     e.preventDefault();
     this.props.doLoginUser(this.state.login);
+    this.props.history.push('/')
   }
 
     handleRegisterInput = (e) => {

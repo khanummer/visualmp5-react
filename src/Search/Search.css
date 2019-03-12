@@ -32,7 +32,9 @@
 
 }
 
-
+.Search-undertitle {
+    padding: 1rem;
+}
 
 .Search-Button {
     background-color: #A7A2A2;
