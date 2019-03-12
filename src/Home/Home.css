@@ -1,3 +1,55 @@
-.Home-items {
+.Home {
+    color: #877476;
+    background-color: #FBFCF2;
+
+}
+/* .Home-items {
     color: black;
+} */
+
+.home-name {
+    font-size: 1.8rem;
+    text-align: left;
+}
+
+.home-artist {
+    font-size: 1.8rem;
+    text-align: left;
+}
+
+.giphy-embed {
+    /* float: left; */
+    align-self: right;
+}
+
+.home-header {
+    font-size: 5rem;
+    padding: 2rem;
+}
+
+
+.home-buttons {
+    background-color: #A7A2A2;
+    color: #FBFCF2;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    padding: 7px 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 1rem;
+    text-align: center;
+}
+
+.home-buttons:hover {
+    background-color: #A7A2A2;
+    color: #CED3CD;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    padding: 7px 30px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 1rem;
+    text-align: center;
 }
