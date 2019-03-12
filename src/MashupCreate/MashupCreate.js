@@ -189,6 +189,10 @@ class MashupCreate extends Component {
                     { this.state.gifResults.map((gif, i) => <div> <iframe src={`${gif.embed_url}`} width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> <br></br><button className="song-show-button" onClick={() => this.setState({ mashup: {...this.state.mashup, GIF:`${gif.embed_url}`} })}>SELECT</button></div> )}
                 </div>
 
+                    <form onSubmit={this.handleSubmit}>
+                        <button className="MashupCreate-Button" type="submit">CREATE V/SUAL MP5</button>
+                    </form>
+
                     <div className="coming-soon">----COMING SOON----</div>
                     <div className="Gif-Search-title">ADD A IMAGE OR VIDEO AS WELL?</div>
                     <form className="MashupCreate-Form">

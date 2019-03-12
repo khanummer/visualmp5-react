@@ -62,12 +62,7 @@ class MashupShow extends Component {
     return (
       <div className="MashupShow">
             <div>MASHUP SHOW PAGE</div>
-            <div>{this.state.mashup.userId}</div>
-            <div>{this.state.mashup.song.name}</div>
-            <img src={`${this.state.mashup.Image}`}/>
-            <div>{this.state.mashup.Video}</div>
-            <div>{this.state.mashup.GIF}</div>
-            <div>{this.state.mashup.Votes}</div>
+
             <button onClick={() => this.deleteMashup(this.state.mashup._id)}>Delete</button>
       </div>
     );

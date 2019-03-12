@@ -40,9 +40,9 @@ class Home extends Component {
   render() {
     return (
       <div className="Home">
-        <div>HOME PAGE / MASHUPS SHOW PAGE</div>
+        <div>V/SUAL MP5</div>
           <ul>
-              { this.state.mashups.map((mashup, i) => <Link key={i} to={`/mashups/${mashup._id}`}><li key={i}>{mashup.userId} {mashup.Image} {mashup.Video} {mashup.GIF} {mashup.Votes}</li></Link>) }
+              { this.state.mashups.map((mashup, i) =>  <div className="Home-items" key={i}> <div>{mashup.song.name}</div> <div>{mashup.song.artist}</div>  <a href={`${mashup.song.url}`}><button>PLAY ON LASTFM</button></a> <Link key={i} to={`/mashups/${mashup._id}`}><button>SHOW</button></Link> <iframe src={`${mashup.GIF}`} width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>  </div>) }
           </ul>
 
       </div>
