@@ -63,7 +63,7 @@ class MashupShow extends Component {
       <div className="MashupShow">
             <div>MASHUP SHOW PAGE</div>
             <div>{this.state.mashup.userId}</div>
-            <div>{this.state.mashup.spotifySong}</div>
+            <div>{this.state.mashup.song.name}</div>
             <img src={`${this.state.mashup.Image}`}/>
             <div>{this.state.mashup.Video}</div>
             <div>{this.state.mashup.GIF}</div>

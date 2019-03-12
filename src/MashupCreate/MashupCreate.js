@@ -7,7 +7,12 @@ class MashupCreate extends Component {
     state = {
         mashup: {
             userId: '',
-            song: {},
+            song: {
+                name: '',
+                artist: '',
+                url: '',
+                userId: ''
+            },
             Image: '',
             Video: '',
             GIF: '',
@@ -21,8 +26,9 @@ class MashupCreate extends Component {
     componentDidMount(){
         this.setState({
             loggedUser: this.props.loggedUser,
-            mashup: this.props.selectedMashup
+            mashup: {song: this.props.selectedMashup}
         })
+        console.log(this.state, 'this is state from mashupcreate')
     }
 
     handleInput = (e) => {
@@ -65,7 +71,6 @@ class MashupCreate extends Component {
             <div className="MashupCreate" >
                 <div className="MashupCreate-Header">CREATE A VISUALMP5</div><br></br>
                 <form className="MashupCreate-Form" onSubmit={this.handleSubmit}>
-                    SONG<br></br><input className="MashupCreate-Input" value={this.state.mashup.name} name='spotifySong' /><br></br>
                     IMAGE<br></br><input className="MashupCreate-Input" value={this.state.mashup.Image} name='Image' onChange={this.handleInput}/><br></br>
                     VIDEO<br></br><input className="MashupCreate-Input" value={this.state.mashup.Video} name='Video' onChange={this.handleInput}/><br></br>
                     GIF<br></br><input className="MashupCreate-Input" value={this.state.mashup.GIF} name='GIF' onChange={this.handleInput}/><br></br>

@@ -36,13 +36,13 @@ class Home extends Component {
         return err
     }
   }
-
+// show image and div of it all
   render() {
     return (
       <div className="Home">
         <div>HOME PAGE / MASHUPS SHOW PAGE</div>
           <ul>
-              { this.state.mashups.map((mashup, i) => <Link key={i} to={`/mashups/${mashup._id}`}><li key={i}>{mashup.userId} {mashup.spotifySong} {mashup.Image} {mashup.Video} {mashup.GIF} {mashup.Votes}</li></Link>) }
+              { this.state.mashups.map((mashup, i) => <Link key={i} to={`/mashups/${mashup._id}`}><li key={i}>{mashup.userId}  {mashup.Image} {mashup.Video} {mashup.GIF} {mashup.Votes}</li></Link>) }
           </ul>
 
       </div>
