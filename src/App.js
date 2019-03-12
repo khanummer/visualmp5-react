@@ -19,7 +19,8 @@ class App extends Component {
     users: [],
     loggedUser: {},
     loggedIn: false,
-    username: ''
+    username: '',
+    selectedMashup: {}
   }
   
   componentDidMount(){
@@ -154,6 +155,12 @@ handleLogout = async () => {
     });
   }
 
+  updateParentMashup = (selectedMashup) => {
+    this.setState({
+      selectedMashup: selectedMashup
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -164,9 +171,9 @@ handleLogout = async () => {
         <Route exact path="/login-or-register" component={(...props) => <LoginRegister doLoginUser={this.doLoginUser} handleRegister={this.handleRegister}/>}/>
         <Route exact path="/users/:id" component={(...props) => <UserShow {...props} loggedUser={this.state.loggedUser} deleteUser={this.deleteUser}/>}/>
         <Route exact path="/mashups/:id" component={(...props) => <MashupShow {...props}/>}/>
-        <Route exact path="/create-mashup" component={(...props) => <MashupCreate {...props} loggedUser={this.state.loggedUser}/>}/>
+        <Route exact path="/create-mashup" component={(...props) => <MashupCreate {...props} loggedUser={this.state.loggedUser} selectedMashup={this.state.selectedMashup}/>}/>
         <Route exact path="/settings" component={(...props) => <Settings {...props} loggedUser={this.state.loggedUser} deleteUser={this.deleteUser} updateParentState={this.updateParentState}/>}/>
-        <Route exact path="/search" component={(...props) => <Search {...props} />}/>
+        <Route exact path="/search" component={(...props) => <Search {...props} history={this.props.history} updateParentMashup={this.updateParentMashup} loggedUser={this.state.loggedUser}/>}/>
       </Switch>
       <Footer loggedIn={this.state.loggedIn} loggedUser={this.state.loggedUser}/>
       </div>

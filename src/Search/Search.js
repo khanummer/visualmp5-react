@@ -6,7 +6,13 @@ class Search extends Component {
 
   state = {
     search: '',
-    songs: []
+    songs: [],
+    selectedMashup: {
+      name: '',
+      artist: '',
+      url: '',
+      userId: ''
+    }
   }
 
 //   componentDidMount(){
@@ -50,27 +56,44 @@ class Search extends Component {
             return err
         }
 }
+
+selectSong = (e) => {
+  console.log(this.state.selectedMashup)
+  this.props.updateParentMashup(this.state.selectedMashup)
+  this.props.history.push('/create-mashup')
+}
+
+
+
+
 //figure out hashtag 
 // <div key={i}><img src={`${song.image[0].#text}`}/></div>
 
 // <a href="#"><button>CREATE VISUALMP5</button></a>
+//<button onClick={() => this.setState({ selectedMashup: {name: `${song.name}`, artist: `${song.artist}`, url: `${song.url}`}})}>SELECT SONG</button> 
+
+
 
   render() {
     return (
       <div className="Search">
         <div className="Search-title">SEARCH FOR A SONG</div>
+        <div>(to create a VISUALMP5, click select, then create)</div>
             <form className="Search-Form" onSubmit={this.getSongs}>
               <input className="Search-Input"type="text" onChange={this.handleSearchInput} value={this.state.search}/>
               <br></br><button className="Search-Button" type="submit">Submit</button>
 
             </form>
     <div>
-    { this.state.songs.map((song, i) => <div> <a href={`${song.url}`}><div key={i}>{song.name} - {song.artist}</div></a>  </div>)}
+    { this.state.songs.map((song, i) =>   <div key={i}>{song.name}<div/>  <div name="artist">{song.artist}</div>  <a href={`${song.url}`} name="url" > <button>lastFM URL</button></a> <button onClick={() => this.setState({ selectedMashup: {name: `${song.name}`, artist: `${song.artist}`, url: `${song.url}`, userId: `${this.props.loggedUser._id}`}})}>SELECT SONG</button> <button onClick={(e) => this.selectSong(e)}>CREATE VISUALMP5</button> </div> )}
     </div>
-      </div>
+    </div>
     );
   }
 }
+
+
+
 
 export default Search;
 
