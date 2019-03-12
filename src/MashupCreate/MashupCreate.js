@@ -20,18 +20,22 @@ class MashupCreate extends Component {
         },
         loggedUser: {},
         search: '',
-        gifResults: []
+        gifResults: [],
+        songs: [],
+        songsSearch: ''
     }
 
     // this is where we're attaching the user to the mashup, if we want the whole user object in the 
     // future this is where we will change that from loggedUser._id to loggedUser
-    componentDidMount(){
-        this.setState({
-            loggedUser: this.props.loggedUser,
-            mashup: {song: this.props.selectedMashup}
-        })
-        console.log(this.state, 'this is state from mashupcreate')
-    }
+
+    // moved to lower below on handle input
+
+    // componentDidMount(){
+    //     this.setState({
+    //         loggedUser: this.props.loggedUser,
+    //     })
+    //     console.log(this.state, 'this is state from mashupcreate')
+    // }
 
     handleInput = (e) => {
         this.setState({
@@ -99,31 +103,98 @@ class MashupCreate extends Component {
                 return err
             }
     }
+    handleSongSearchInput = (e) => {
+        this.setState({
+            songSearch: e.currentTarget.value,
+            loggedUser: this.props.loggedUser
+        });
+        
+        console.log(this.state)
+        // this.postSongs()
+    }
+
+    getSongs = async (e) => {
+        e.preventDefault();
+            try {
+                const response = await fetch(`http://localhost:4000/api/lastFM/search/${this.state.songSearch}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': 'http://localhost:3000'
+                }
+                });
+                if(!response.ok){
+                    throw Error(response.statusText)
+                }
+                const parsedResponse = await response.json();
+                console.log(parsedResponse.results.trackmatches.track,  'this is lastFM search')
+                this.setState({
+                    songs: parsedResponse.results.trackmatches.track
+                })
+            } catch(err) {
+                console.log(err);
+                return err
+            }
+    }
+
+    changeGIFstate = (selectedGIF) => {
+        this.setState({
+            mashup:{GIF: selectedGIF
+        }})
+
+    }
+
+
+
+
+// gif update state
+
+// onClick={this.changeGIFstate(`${gif.embed_url}`)} 
+
 
     render(){
         return(
             <div className="MashupCreate" >
+
+                <div className="MashupCreate-Header">CREATE A VISUALMP5</div><br></br>
+
+
+
+
+                <div className="Gif-Search-title">SEARCH FOR A SONG</div>
+                <form className="Gif-Search-Form" onSubmit={this.getSongs}>
+                    <input className="Gif-Search-Input"type="text" onChange={this.handleSongSearchInput} value={this.state.songSearch}/>
+                    <br></br><button className="MashupCreate-Button" type="submit">SUBMIT</button>
+
+                </form>
+
+
                 <div>
-                    <div className="MashupCreate-Header">CREATE A VISUALMP5</div><br></br>
+                    { this.state.songs.map((song, i) =>   <div key={i}>{song.name}<div/>  <div name="artist">{song.artist}</div>  <a href={`${song.url}`} name="url" > <button>lastFM URL</button></a> <button onClick={() => this.setState({ mashup:{ song: {name: `${song.name}`, artist: `${song.artist}`, url: `${song.url}`, userId: `${this.props.loggedUser._id}`}}})}>SELECT SONG</button> </div> )}
+                </div>
+
+
+
+                <div>
 
                     <div className="Gif-Search-title">SEARCH FOR A GIF</div>
                     <form className="Gif-Search-Form" onSubmit={this.getGIFS}>
                         <input className="Gif-Search-Input"type="text" onChange={this.handleSearchInput} value={this.state.search}/>
-                        <br></br><button className="MashupCreate-Button" type="submit">Submit</button>
+                        <br></br><button className="MashupCreate-Button" type="submit">SUBMIT</button>
 
                     </form>
 
 
                 <div>
-                    { this.state.gifResults.map((gif, i) => <div> <iframe src={`${gif.embed_url}`} width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> </div> )}
+                    { this.state.gifResults.map((gif, i) => <div> <iframe src={`${gif.embed_url}`} width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> <br></br><button className="MashupCreate-Button">SELECT</button></div> )}
                 </div>
 
-
+                    <div className="coming-soon">----COMING SOON----</div>
                     <div className="Gif-Search-title">ADD A IMAGE OR VIDEO AS WELL?</div>
-                    <form className="MashupCreate-Form" onSubmit={this.handleSubmit}>
-                        IMAGE<br></br><input className="MashupCreate-Input" value={this.state.mashup.Image} name='Image' onChange={this.handleInput}/><br></br>
-                        VIDEO<br></br><input className="MashupCreate-Input" value={this.state.mashup.Video} name='Video' onChange={this.handleInput}/><br></br>
-                        <button className="MashupCreate-Button" type="submit">SUBMIT</button>
+                    <form className="MashupCreate-Form">
+                        IMAGE<br></br><input className="MashupCreate-Input"/><br></br>
+                        VIDEO<br></br><input className="MashupCreate-Input"/><br></br>
+                        <button className="MashupCreate-Button">SUBMIT</button>
                     </form>
                 </div>
                 
