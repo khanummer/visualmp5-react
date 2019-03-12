@@ -170,7 +170,7 @@ class MashupCreate extends Component {
 
 
                 <div>
-                    { this.state.songs.map((song, i) =>   <div key={i}>{song.name}<div/>  <div name="artist">{song.artist}</div>  <a href={`${song.url}`} name="url" > <button>lastFM URL</button></a> <button onClick={() => this.setState({ mashup:{ song: {name: `${song.name}`, artist: `${song.artist}`, url: `${song.url}`, userId: `${this.props.loggedUser._id}`}}})}>SELECT SONG</button> </div> )}
+                    { this.state.songs.map((song, i) =>   <div key={i} className="song-show-name">{song.name}<div/>  <div className="song-show-artist" name="artist">{song.artist}</div>  <a href={`${song.url}`} name="url" > <button className="song-show-button">PLAY ON LASTFM</button></a> <button className="song-show-button" onClick={() => this.setState({ mashup:{ song: {name: `${song.name}`, artist: `${song.artist}`, url: `${song.url}`, userId: `${this.props.loggedUser._id}`}}})}>SELECT SONG</button> </div> )}
                 </div>
 
 
@@ -186,7 +186,7 @@ class MashupCreate extends Component {
 
 
                 <div>
-                    { this.state.gifResults.map((gif, i) => <div> <iframe src={`${gif.embed_url}`} width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> <br></br><button className="MashupCreate-Button">SELECT</button></div> )}
+                    { this.state.gifResults.map((gif, i) => <div> <iframe src={`${gif.embed_url}`} width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> <br></br><button className="song-show-button">SELECT</button></div> )}
                 </div>
 
                     <div className="coming-soon">----COMING SOON----</div>

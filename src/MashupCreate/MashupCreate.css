@@ -100,3 +100,40 @@
 
 
 
+.song-show-name {
+    color: #FBFCF2;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+}
+
+.song-show-artist {
+    color: #877476;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+
+}
+
+.song-show-button {
+    background-color: #877476;
+    color: #FBFCF2;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    padding: 7px 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 1rem;
+}
+
+.song-show-button:hover {
+    background-color: #877476;
+    color: #CED3CD;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    padding: 7px 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 1rem;
+}
+

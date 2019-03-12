@@ -78,8 +78,8 @@ selectSong = (e) => {
   render() {
     return (
       <div className="Search">
+        <div className="coming-soon-dark">-----COMING SOON-----</div>
         <div className="Search-title">SEARCH FOR A SONG</div>
-        <div>(to create a VISUALMP5, click select, then create)</div>
             <form className="Search-Form" onSubmit={this.getSongs}>
               <input className="Search-Input"type="text" onChange={this.handleSearchInput} value={this.state.search}/>
               <br></br><button className="Search-Button" type="submit">Submit</button>
