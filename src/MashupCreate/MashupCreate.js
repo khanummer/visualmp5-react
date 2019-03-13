@@ -87,7 +87,7 @@ class MashupCreate extends Component {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': 'https://visual-mp5.herokuapp.com'
+                    'Access-Control-Allow-Origin': 'https://visual-mp5.herokuapp.com/create-mashup'
                 }
                 });
                 if(!response.ok){
@@ -120,7 +120,7 @@ class MashupCreate extends Component {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': 'https://visual-mp5.herokuapp.com'
+                    'Access-Control-Allow-Origin': 'https://visual-mp5.herokuapp.com/create-mashup'
                 }
                 });
                 if(!response.ok){
