@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-// import './Contact.css'
+import './Contact.css'
 
 class Contact extends Component {
   render() {
     return (
       <div className="Contact">
-        HI IM UMMER CONTACT ME<br></br>
-        <iframe src="https://open.spotify.com/embed/album/3RaACfwYTY9uiDy3VSWLLc" width="300" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media" title="spotify-player"></iframe>
+        <div className="Contact-header">UMMER KHAN</div>
+          <div>UMMERNKHAN@GMAIL.COM</div>
+          <a href="https://www.linkedin.com/in/khanummer"><div>LINKEDIN</div></a>
+          <a href="https://github.com/khanummer"><div>GITHUB</div></a>
       </div>
     );
   }

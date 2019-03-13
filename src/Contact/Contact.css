@@ -1,0 +1,29 @@
+.Contact {
+    background-color: #FBFCF2;
+    color: #877476;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 1rem;
+    /* margin: 1rem; */
+    text-align: center;
+    justify-content: center;
+    font-size: 3rem;
+    height: 100vh;
+}
+
+.Contact-header {
+    font-size: 5rem;
+    padding: 2rem;
+}
+
+.Contact a {
+    color: #877476
+}
+
+.Contact a:visited {
+    color: #877476
+}
+
+.Contact a:hover {
+    color: #A7A2A2
+}
