@@ -12,7 +12,7 @@ class Header extends Component {
           <Link to="/search"><div>SEARCH</div></Link>
           <Link to="/create-mashup"><div>CREATE</div></Link>
           <Link to="/"><div>HOME</div></Link>
-          <Link to="/" onClick={() => this.props.handleLogout}><div>LOGOUT</div></Link>
+          <Link to="/" onClick={this.props.handleLogout}><div>LOGOUT</div></Link>
         </div>
       );
       

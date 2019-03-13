@@ -12,8 +12,10 @@
     color: #CED3CD;
 }
 
-a {
-text-decoration: none;
+.Header a {
+    text-decoration: none;
+    color: #FBFCF2;
+
 }
 
 a:visited {
