@@ -1,0 +1,12 @@
+.MashupShow {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 2rem;
+    margin: 2rem;
+    justify-content: center;
+    /* background-color: #877476; */
+    border: 3px solid #877476;
+    border-radius: 10px;
+    background-color: #877476;
+    color: #FBFCF2;
+}

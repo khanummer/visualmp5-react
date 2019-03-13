@@ -1,36 +1,80 @@
 .Home {
     color: #877476;
     background-color: #FBFCF2;
+    /* display: flex;
+    flex-flow: row nowrap; */
+    /* display: grid;
+    grid-template-columns: 720px 720px;
+    grid-template-rows: 200px
+                        400px
+                        100px
+                        400px
+                        100px
+                        400px
+                        100px
+                        400px
+                        100px
+                        400px
+                        100px;
+    grid-template-areas:"home-header home-header"
+                        "song gif"
+                        "home-buttons home-buttons" */
 
 }
-/* .Home-items {
-    color: black;
-} */
+.Home-items {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    /* background-color: #877476; */
+    margin: 2rem;
+    border: 3px solid #877476;
+    border-radius: 10px;
+    background-color: #877476;
+    color: #FBFCF2;
+    /* align-content: space-around; */
+}
+
+.home-song {
+    /* grid-area: song */
+    align-self: center;
+    padding: 2rem;
+}
+
+
 
 .home-name {
     font-size: 1.8rem;
-    text-align: left;
+    /* text-align: left; */
 }
 
 .home-artist {
     font-size: 1.8rem;
-    text-align: left;
+    /* text-align: left; */
 }
 
 .giphy-embed {
-    /* float: left; */
-    align-self: right;
+    /* grid-area: gif; */
+    /* float: right; */
+    /* justify-content: right; */
+    padding: 1.5rem;
+    
+}
+
+.gif {
+    float: right;
 }
 
 .home-header {
+    /* grid-area: home-header; */
     font-size: 5rem;
     padding: 2rem;
 }
 
 
 .home-buttons {
-    background-color: #A7A2A2;
-    color: #FBFCF2;
+    /* grid-area: home-buttons; */
+    background-color: #FBFCF2;
+    color: #877476;
     border: none;
     outline: none;
     border-radius: 25px;
@@ -43,12 +87,12 @@
 
 .home-buttons:hover {
     background-color: #A7A2A2;
-    color: #CED3CD;
+    color: #FBFCF2;
     border: none;
     outline: none;
     border-radius: 25px;
     padding: 7px 30px;
-    font-size: 1.2rem;
+    /* font-size: 1.2rem; */
     font-weight: 500;
     margin: 1rem;
     text-align: center;
