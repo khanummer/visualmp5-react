@@ -100,7 +100,7 @@ class UserShow extends Component {
             <div className="UserShow-email">{this.state.user.email}</div>
 
             <div className="UserShow-mashups">
-                { this.state.userMashups.map((mashup, i) =>  <div className="Home-items" key={i}> <div className="home-song"> <div className="home-name">{mashup.song.name}</div> <div className="home-artist">{mashup.song.artist}</div> <a href={`${mashup.song.url}`}><button className="home-buttons">PLAY ON LASTFM</button></a> <Link key={i} to={`/mashups/${mashup._id}`}><button className="home-buttons">SHOW</button></Link> </div> <div className="gif"><iframe src={`${mashup.GIF}`} width="480" height="360" frameBorder="0" className="giphy-embed" allowFullScreen></iframe></div>  </div>)} 
+                { this.state.userMashups.map((mashup, i) =>  <div className="UserShow-items" key={i}> <div className="UserShow-song"> <div className="UserShow-name">{mashup.song.name}</div> <div className="UserShow-artist">{mashup.song.artist}</div> <a href={`${mashup.song.url}`}><button className="UserShow-buttons">PLAY ON LASTFM</button></a> <Link key={i} to={`/mashups/${mashup._id}`}><button className="UserShow-buttons">SHOW</button></Link> </div> <div className="gif"><iframe src={`${mashup.GIF}`} width="480" height="360" frameBorder="0" className="giphy-embed" allowFullScreen></iframe></div>  </div>)} 
 
             </div>
 
