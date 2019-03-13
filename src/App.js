@@ -28,7 +28,7 @@ class App extends Component {
   }
 
   doLoginUser = (user) =>
-    axios.post('http://localhost:4000/users/login', user)
+    axios.post('https://visual-mp5-api.herokuapp.com/users/login', user)
       .then(res => {
         console.log(res)
         this.setState({
@@ -41,7 +41,7 @@ class App extends Component {
 
 handleRegister = async (data) => {
     try{
-        const registerResponse =  await fetch ('http://localhost:4000/users', {
+        const registerResponse =  await fetch ('https://visual-mp5-api.herokuapp.com/users', {
             method: 'POST',
             credentials: 'include',
             body: JSON.stringify(data),
