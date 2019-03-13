@@ -24,7 +24,7 @@ class App extends Component {
   }
   
   componentDidMount(){
-    this.getUsers()
+    // this.getUsers()
   }
 
   doLoginUser = (user) =>
