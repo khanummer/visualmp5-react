@@ -72,11 +72,11 @@ handleRegister = async (data) => {
 
 handleLogout = async () => {
   try {
-    const response = await fetch('http://localhost:4000/users/logout', {
+    const response = await fetch('https://visual-mp5-api.herokuapp.com/users/logout', {
       method: 'GET',
       headers: {
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': 'http://localhost:3000'
+          'Access-Control-Allow-Origin': 'https://visual-mp5.herokuapp.com'
 
       }
     });
@@ -99,12 +99,12 @@ handleLogout = async () => {
 
   getUsers = async () => {
     try {
-        const response = await fetch(`http://localhost:4000/users`, {
+        const response = await fetch(`https://visual-mp5-api.herokuapp.com/users`, {
           method: 'GET',
           // credentials: 'include',
           headers: {
             'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': 'http://localhost:3000'
+            'Access-Control-Allow-Origin': 'https://visual-mp5.herokuapp.com'
           }
         });
           
@@ -126,12 +126,12 @@ handleLogout = async () => {
 
   deleteUser = async (id) => {
     try {
-      const deletedUser = await fetch(`http://localhost:4000/users/${id}`, {
+      const deletedUser = await fetch(`https://visual-mp5-api.herokuapp.com/users/${id}`, {
         method: 'DELETE',
         credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': 'http://localhost:3000'
+          'Access-Control-Allow-Origin': 'https://visual-mp5.herokuapp.com'
         }
       });
       if (!deletedUser.ok) {

@@ -22,11 +22,11 @@ class MashupShow extends Component {
 
     getMashup = async (id) => {
         try {
-            const response = await fetch(`http://localhost:4000/mashups/${id}`, {
+            const response = await fetch(`https://visual-mp5-api.herokuapp.com/mashups/${id}`, {
                 method: 'GET',
                 headers: {
                   'Content-Type': 'application/json',
-                  'Access-Control-Allow-Origin': 'http://localhost:3000'
+                  'Access-Control-Allow-Origin': 'https://visual-mp5.herokuapp.com'
                 }
             });
 
@@ -47,12 +47,12 @@ class MashupShow extends Component {
 
     deleteMashup = async (id) => {
         try {
-            const deletedMashup = await fetch(`http://localhost:4000/mashups/${id}`, {
+            const deletedMashup = await fetch(`https://visual-mp5-api.herokuapp.com/mashups/${id}`, {
             method: 'DELETE',
             credentials: 'include',
             headers: {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': 'http://localhost:3000'
+                'Access-Control-Allow-Origin': 'https://visual-mp5.herokuapp.com'
             }
             });
             if (!deletedMashup.ok) {

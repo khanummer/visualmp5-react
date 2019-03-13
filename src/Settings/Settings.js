@@ -25,7 +25,7 @@ class Settings extends Component {
         // console.log(this.state.register)
     }
     handleEditSubmit = () => {
-        axios.put(`http://localhost:4000/users/${this.state.user._id}`, {
+        axios.put(`https://visual-mp5-api.herokuapp.com/users/${this.state.user._id}`, {
             username: this.state.user.username,
             email: this.state.user.email,
             profilePic: this.state.user.profilePic

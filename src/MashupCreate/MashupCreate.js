@@ -48,13 +48,13 @@ class MashupCreate extends Component {
 
     handleSubmit = async () => {
         try {
-            const createMashupResponse =  await fetch ('http://localhost:4000/mashups', {
+            const createMashupResponse =  await fetch ('https://visual-mp5-api.herokuapp.com/mashups', {
                 method: 'POST',
                 credentials: 'include',
                 body: JSON.stringify(this.state.mashup),
                 headers: {
                     'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': 'http://localhost:3000'
+                    'Access-Control-Allow-Origin': 'https://visual-mp5.herokuapp.com'
                 }
             });
     
@@ -83,11 +83,11 @@ class MashupCreate extends Component {
     getGIFS = async (e) => {
         e.preventDefault();
             try {
-                const response = await fetch(`http://localhost:4000/api/giphy/search/${this.state.search}`, {
+                const response = await fetch(`https://visual-mp5-api.herokuapp.com/api/giphy/search/${this.state.search}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': 'http://localhost:3000'
+                    'Access-Control-Allow-Origin': 'https://visual-mp5.herokuapp.com'
                 }
                 });
                 if(!response.ok){
@@ -116,11 +116,11 @@ class MashupCreate extends Component {
     getSongs = async (e) => {
         e.preventDefault();
             try {
-                const response = await fetch(`http://localhost:4000/api/lastFM/search/${this.state.songSearch}`, {
+                const response = await fetch(`https://visual-mp5-api.herokuapp.com/api/lastFM/search/${this.state.songSearch}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': 'http://localhost:3000'
+                    'Access-Control-Allow-Origin': 'https://visual-mp5.herokuapp.com'
                 }
                 });
                 if(!response.ok){
