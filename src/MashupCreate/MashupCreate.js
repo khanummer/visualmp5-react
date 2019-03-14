@@ -45,7 +45,12 @@ class MashupCreate extends Component {
         });
     }
 
-    handleSubmit = async () => {
+    handleSubmit =  () => {
+      doSubmit()
+      this.props.history.push('/')
+    }
+
+    doSubmit = async () => {
         try {
             const createMashupResponse =  await fetch ('https://visual-mp5-api.herokuapp.com/mashups', {
                 method: 'POST',
@@ -66,7 +71,7 @@ class MashupCreate extends Component {
            
             console.log(createMashupParsed.mashup,'mashup created')
            
-            this.props.history.push('/')
+            // this.props.history.push('/')
             
         } catch (err) {
             console.log(err);
