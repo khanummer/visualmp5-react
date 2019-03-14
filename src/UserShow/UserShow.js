@@ -10,8 +10,8 @@ class UserShow extends Component {
     }
 
     componentDidMount(){
-        this.getMashups()
-        this.getUser(this.props.match.params.id)
+      this.getUser(this.props.match.params.id)
+      this.getMashups()
         // this.getUser('5c82c49667442776546210f5')
         // this.setState({
         //     user: this.props.loggedUser
