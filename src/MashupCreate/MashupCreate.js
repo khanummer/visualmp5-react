@@ -6,7 +6,6 @@ class MashupCreate extends Component {
 // pass in logged user in component did mount and set the logged user id to the userID on the mashup object
     state = {
         mashup: {
-            userId: '',
             song: {
                 name: '',
                 artist: '',

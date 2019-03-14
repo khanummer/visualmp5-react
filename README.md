@@ -1,3 +1,96 @@
+
+#H1 V/SUAL MP5 | VISUAL MP5
+
+V/SUALMP5 is an application for users to create 'mashups' of visuals and audio that go together well.
+
+Users can create there own mashups of Songs and GIFS and post for others to see as well.
+
+**bold-text** DEPLOYED LINK :
+
+[V/SUALMP5](https://visual-mp5.herokuapp.com/)
+
+
+**bold-text** TECHNOLOGIES USED :  
+HTML5
+CSS
+JAVASCRIPT
+EXPRESS
+EXPRESS-SESSION
+MONGO
+MONGOOSE
+REACT
+REACT-ROUTER
+AXIOS
+DOTENV
+BCRYPT
+CORS
+
+**bold-text** API's USED :
+LASTFM API
+GIPHY API
+
+**bold-text** DEPLOYMENT :
+HEROKU
+MLAB
+
+
+
+<SCREENSHOTS>
+
+
+**bold-text** SCREENSHOTS: 
+![1](./imgs/screenshot-1.png)
+![2](./imgs/screenshot-2.png)
+![3](./imgs/screenshot-3.png)
+![4](./imgs/screenshot-4.png)
+
+
+
+**bold-text** EARLY PLANNING : 
+
+
+
+
+**bold-text** FUTURE PLANS / UPCOMING FEATURES : 
+- UpVote and DownVote System
+- Youtube Search API implimentation
+- Spotify / Soundcloud Support
+- In-Home Widget for playing music
+- Art API search implimentation
+- Created User is shown with every post
+- Search Algorithm for having related visuals in all mediums appear after searching a song
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
