@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import './MashupCreate.css';
 
 class MashupCreate extends Component {
-// pass in logged user in component did mount and set the logged user id to the userID on the mashup object
     state = {
         mashup: {
             song: {
@@ -24,17 +23,6 @@ class MashupCreate extends Component {
         songsSearch: ''
     }
 
-    // this is where we're attaching the user to the mashup, if we want the whole user object in the 
-    // future this is where we will change that from loggedUser._id to loggedUser
-
-    // moved to lower below on handle input
-
-    // componentDidMount(){
-    //     this.setState({
-    //         loggedUser: this.props.loggedUser,
-    //     })
-    //     console.log(this.state, 'this is state from mashupcreate')
-    // }
 
     handleInput = (e) => {
         this.setState({
@@ -109,6 +97,9 @@ class MashupCreate extends Component {
                 return err
             }
     }
+
+    // this is where we're attaching the user to the mashup, if we want the whole user object in the 
+    // future this is where we will change that from loggedUser._id to loggedUser
     handleSongSearchInput = (e) => {
         this.setState({
             songSearch: e.currentTarget.value,
@@ -152,10 +143,6 @@ class MashupCreate extends Component {
 
 
 
-
-// gif update state
-
-// onClick={this.changeGIFstate(`${gif.embed_url}`)} 
 
 
     render(){
