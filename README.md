@@ -39,10 +39,10 @@ MLAB
 
 
 **bold-text** SCREENSHOTS: 
-![1](./imgs/screenshot-1.png)
-![2](./imgs/screenshot-2.png)
-![3](./imgs/screenshot-3.png)
-![4](./imgs/screenshot-4.png)
+![1](../imgs/screenshot-1.png)
+![2](../imgs/screenshot-2.png)
+![3](../imgs/screenshot-3.png)
+![4](../imgs/screenshot-4.png)
 
 
 
