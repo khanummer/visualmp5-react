@@ -171,7 +171,7 @@ handleLogout = async () => {
         <Route exact path="/login-or-register" component={(...props) => <LoginRegister history={this.props.history} doLoginUser={this.doLoginUser} handleRegister={this.handleRegister}/>}/>
         <Route exact path="/users/:id" component={(...props) => <UserShow {...props} loggedUser={this.state.loggedUser} deleteUser={this.deleteUser}/>}/>
         <Route exact path="/mashups/:id" component={(...props) => <MashupShow {...props}/>}/>
-        <Route exact path="/create-mashup" component={(...props) => <MashupCreate {...props} loggedUser={this.state.loggedUser} selectedMashup={this.state.selectedMashup}/>}/>
+        <Route exact path="/create-mashup" component={(...props) => <MashupCreate {...props} history={this.props.history} loggedUser={this.state.loggedUser} selectedMashup={this.state.selectedMashup}/>}/>
         <Route exact path="/settings" component={(...props) => <Settings {...props} loggedUser={this.state.loggedUser} deleteUser={this.deleteUser} updateParentState={this.updateParentState}/>}/>
         <Route exact path="/search" component={(...props) => <Search {...props} history={this.props.history} updateParentMashup={this.updateParentMashup} loggedUser={this.state.loggedUser}/>}/>
       </Switch>
