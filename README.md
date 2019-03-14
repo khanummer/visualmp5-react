@@ -35,7 +35,6 @@ Users can create there own mashups of Songs and GIFS and post for others to see 
 
 **SCREENSHOTS**
 ![1](./public/imgs/screenshot-1.png)
-![2](./public/imgs/screenshot-2.png)
 ![3](./public/imgs/screenshot-3.png)
 ![4](./public/imgs/screenshot-4.png)
 
