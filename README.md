@@ -1,16 +1,16 @@
 
-#H1 V/SUAL MP5 | VISUAL MP5
+# V/SUAL MP5 | VISUAL MP5
 
 V/SUALMP5 is an application for users to create 'mashups' of visuals and audio that go together well.
 
 Users can create there own mashups of Songs and GIFS and post for others to see as well.
 
-**bold-text** DEPLOYED LINK :
+**DEPLOYED LINK**
 
-[V/SUALMP5](https://visual-mp5.herokuapp.com/)
+[https://visual-mp5.herokuapp.com/](https://visual-mp5.herokuapp.com/)
 
 
-**bold-text** TECHNOLOGIES USED :  
+**TECHNOLOGIES USED**  
 HTML5
 CSS
 JAVASCRIPT
@@ -25,20 +25,15 @@ DOTENV
 BCRYPT
 CORS
 
-**bold-text** API's USED :
+**API's USED**
 LASTFM API
 GIPHY API
 
-**bold-text** DEPLOYMENT :
+**DEPLOYMENT**
 HEROKU
 MLAB
 
-
-
-<SCREENSHOTS>
-
-
-**bold-text** SCREENSHOTS: 
+**SCREENSHOTS**
 ![1](../imgs/screenshot-1.png)
 ![2](../imgs/screenshot-2.png)
 ![3](../imgs/screenshot-3.png)
@@ -46,12 +41,12 @@ MLAB
 
 
 
-**bold-text** EARLY PLANNING : 
+**EARLY PLANNING**
 
 
 
 
-**bold-text** FUTURE PLANS / UPCOMING FEATURES : 
+**FUTURE PLANS / UPCOMING FEATURES**
 - UpVote and DownVote System
 - Youtube Search API implimentation
 - Spotify / Soundcloud Support
