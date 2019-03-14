@@ -11,27 +11,27 @@ Users can create there own mashups of Songs and GIFS and post for others to see 
 
 
 **TECHNOLOGIES USED**  
-HTML5
-CSS
-JAVASCRIPT
-EXPRESS
-EXPRESS-SESSION
-MONGO
-MONGOOSE
-REACT
-REACT-ROUTER
-AXIOS
-DOTENV
-BCRYPT
-CORS
+- HTML5 
+- CSS
+- JAVASCRIPT
+- EXPRESS
+- EXPRESS-SESSION
+- MONGO
+- MONGOOSE
+- REACT
+- REACT-ROUTER
+- AXIOS
+- DOTENV
+- BCRYPT
+- CORS
 
 **API's USED**
-LASTFM API
-GIPHY API
+- LASTFM API
+- GIPHY API
 
 **DEPLOYMENT**
-HEROKU
-MLAB
+- HEROKU
+- MLAB
 
 **SCREENSHOTS**
 ![1](./public/imgs/screenshot-1.png)
@@ -42,7 +42,6 @@ MLAB
 
 
 **EARLY PLANNING**
-![1](./public/imgs/early-planning-1.JPG)
 ![2](./public/imgs/early-planning-2.JPG)
 ![3](./public/imgs/early-planning-3.JPG)
 
