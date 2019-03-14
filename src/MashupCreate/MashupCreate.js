@@ -46,7 +46,7 @@ class MashupCreate extends Component {
     }
 
     handleSubmit =  () => {
-      doSubmit()
+      this.doSubmit()
       this.props.history.push('/')
     }
 
