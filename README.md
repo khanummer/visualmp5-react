@@ -44,6 +44,7 @@ Users can create there own mashups of Songs and GIFS and post for others to see 
 **EARLY PLANNING**
 ![2](./public/imgs/early-planning-2.JPG)
 ![3](./public/imgs/early-planning-3.JPG)
+![4](./public/imgs/color-pallet.PNG)
 
 
 
