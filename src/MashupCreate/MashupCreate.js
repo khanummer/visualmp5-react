@@ -46,16 +46,16 @@ class MashupCreate extends Component {
     }
 
     handleSubmit =  () => {
-      this.doSubmit()
+      this.doSubmit(this.state.mashup)
       this.props.history.push('/')
     }
 
-    doSubmit = async () => {
+    doSubmit = async (data) => {
         try {
             const createMashupResponse =  await fetch ('https://visual-mp5-api.herokuapp.com/mashups', {
                 method: 'POST',
                 credentials: 'include',
-                body: JSON.stringify(this.state.mashup),
+                body: JSON.stringify(data),
                 headers: {
                     'Content-Type': 'application/json',
                     'Access-Control-Allow-Origin': 'https://visual-mp5.herokuapp.com'
