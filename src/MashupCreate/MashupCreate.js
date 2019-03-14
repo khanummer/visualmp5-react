@@ -63,9 +63,11 @@ class MashupCreate extends Component {
     
             const createMashupParsed = await createMashupResponse.json();
             
+           
             console.log(createMashupParsed.mashup,'mashup created')
-
-
+           
+            this.props.history.push('/')
+            
         } catch (err) {
             console.log(err);
         }
