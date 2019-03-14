@@ -42,7 +42,9 @@ MLAB
 
 
 **EARLY PLANNING**
-
+![1](./public/imgs/early-planning-1.png)
+![2](./public/imgs/early-planning-2.png)
+![3](./public/imgs/early-planning-3.png)
 
 
 
