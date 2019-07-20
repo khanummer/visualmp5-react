@@ -28,7 +28,7 @@ class App extends Component {
   }
 
   doLoginUser = (user) =>
-    axios.post('https://visual-mp5-api.herokuapp.com/users/login', user)
+    axios.post('https://localhost:4000/users/login', user)
       .then(res => {
         console.log(res)
         this.setState({
@@ -41,13 +41,13 @@ class App extends Component {
 
 handleRegister = async (data) => {
     try{
-        const registerResponse =  await fetch ('https://visual-mp5-api.herokuapp.com/users', {
+        const registerResponse =  await fetch ('https://localhost:4000/users', {
             method: 'POST',
             credentials: 'include',
             body: JSON.stringify(data),
             headers: {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': 'https://visual-mp5.herokuapp.com'
+                'Access-Control-Allow-Origin': 'https://localhost:3000'
 
             }
         });
@@ -72,11 +72,11 @@ handleRegister = async (data) => {
 
 handleLogout = async () => {
   try {
-    const response = await fetch('https://visual-mp5-api.herokuapp.com/users/logout', {
+    const response = await fetch('https://localhost:4000/users/logout', {
       method: 'GET',
       headers: {
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': 'https://visual-mp5.herokuapp.com'
+          'Access-Control-Allow-Origin': 'https://localhost:3000'
 
       }
     });
@@ -99,12 +99,12 @@ handleLogout = async () => {
 
   getUsers = async () => {
     try {
-        const response = await fetch(`https://visual-mp5-api.herokuapp.com/users`, {
+        const response = await fetch(`https://localhost:4000/users`, {
           method: 'GET',
           // credentials: 'include',
           headers: {
             'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': 'https://visual-mp5.herokuapp.com'
+            'Access-Control-Allow-Origin': 'https://localhost:3000'
           }
         });
           
@@ -126,12 +126,12 @@ handleLogout = async () => {
 
   deleteUser = async (id) => {
     try {
-      const deletedUser = await fetch(`https://visual-mp5-api.herokuapp.com/users/${id}`, {
+      const deletedUser = await fetch(`https://localhost:4000/users/${id}`, {
         method: 'DELETE',
         credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': 'https://visual-mp5.herokuapp.com'
+          'Access-Control-Allow-Origin': 'https://localhost:3000'
         }
       });
       if (!deletedUser.ok) {

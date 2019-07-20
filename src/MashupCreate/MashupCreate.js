@@ -40,13 +40,13 @@ class MashupCreate extends Component {
 
     doSubmit = async (data) => {
         try {
-            const createMashupResponse =  await fetch ('https://visual-mp5-api.herokuapp.com/mashups', {
+            const createMashupResponse =  await fetch ('https://localhost:4000/mashups', {
                 method: 'POST',
                 credentials: 'include',
                 body: JSON.stringify(data),
                 headers: {
                     'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': 'https://visual-mp5.herokuapp.com'
+                    'Access-Control-Allow-Origin': 'https://localhost:3000'
                 }
             });
     
@@ -77,7 +77,7 @@ class MashupCreate extends Component {
     getGIFS = async (e) => {
         e.preventDefault();
             try {
-                const response = await fetch(`https://visual-mp5-api.herokuapp.com/api/giphy/search/${this.state.search}`, {
+                const response = await fetch(`https://localhost:4000/api/giphy/search/${this.state.search}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -113,7 +113,7 @@ class MashupCreate extends Component {
     getSongs = async (e) => {
         e.preventDefault();
             try {
-                const response = await fetch(`https://visual-mp5-api.herokuapp.com/api/lastFM/search/${this.state.songSearch}`, {
+                const response = await fetch(`https://localhost:4000/api/lastFM/search/${this.state.songSearch}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',

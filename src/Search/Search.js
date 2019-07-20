@@ -37,11 +37,11 @@ class Search extends Component {
 //   getSongs = async (e) => {
 //     e.preventDefault();
 //         try {
-//             const response = await fetch(`https://visual-mp5-api.herokuapp.com/api/lastFM/search/${this.state.search}`, {
+//             const response = await fetch(`https://localhost:4000/api/lastFM/search/${this.state.search}`, {
 //             method: 'GET',
 //             headers: {
 //                 'Content-Type': 'application/json',
-//                 'Access-Control-Allow-Origin': 'https://visual-mp5.herokuapp.com'
+//                 'Access-Control-Allow-Origin': 'https://localhost:3000'
 //             }
 //             });
 //             if(!response.ok){

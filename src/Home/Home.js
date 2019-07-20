@@ -14,11 +14,11 @@ class Home extends Component {
 
   getMashups = async () => {
     try {
-        const response = await fetch(`https://visual-mp5-api.herokuapp.com/mashups`, {
+        const response = await fetch(`https://localhost:4000/mashups`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': 'https://visual-mp5.herokuapp.com'
+            'Access-Control-Allow-Origin': 'https://localhost:3000'
           }
         });
           

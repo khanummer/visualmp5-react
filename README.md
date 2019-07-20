@@ -7,7 +7,7 @@ Users can create there own mashups of Songs and GIFS and post for others to see 
 
 **DEPLOYED LINK**
 
-[https://visual-mp5.herokuapp.com/](https://visual-mp5.herokuapp.com/)
+[https://localhost:3000/](https://localhost:3000/)
 
 
 **TECHNOLOGIES USED**  
